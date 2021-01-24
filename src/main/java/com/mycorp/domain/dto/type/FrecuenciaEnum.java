@@ -1,4 +1,4 @@
-package com.mycorp.soporte;
+package com.mycorp.domain.dto.type;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.mycorp.soporte;
+package com.mycorp.exception;
 
 
 /**

@@ -1,6 +1,8 @@
-package com.mycorp.soporte;
+package com.mycorp.domain.dto;
 
 import java.io.Serializable;
+
+import com.mycorp.domain.dto.type.TipoPromocionEnum;
 
 /**
  * Bean para recoger las promociones aplicadas en la simulación.

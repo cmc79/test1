@@ -1,4 +1,6 @@
-package com.mycorp.soporte;
+package com.mycorp.service;
+
+import com.mycorp.domain.dto.RESTResponse;
 
 import es.sanitas.seg.simulacionpoliza.services.api.simulacion.vo.Simulacion;
 import es.sanitas.seg.simulacionpoliza.services.api.simulacion.vo.Tarificacion;

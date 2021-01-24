@@ -28,22 +28,24 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mycorp.soporte.BeneficiarioPolizas;
-import com.mycorp.soporte.DatosAltaAsegurados;
-import com.mycorp.soporte.DatosAseguradoInclusion;
-import com.mycorp.soporte.ExcepcionContratacion;
-import com.mycorp.soporte.FrecuenciaEnum;
-import com.mycorp.soporte.PrimasPorProducto;
-import com.mycorp.soporte.ProductoPolizas;
-import com.mycorp.soporte.PromocionAplicada;
-import com.mycorp.soporte.RESTResponse;
-import com.mycorp.soporte.SimulacionWS;
-import com.mycorp.soporte.StaticVarsContratacion;
-import com.mycorp.soporte.TarificacionPoliza;
-import com.mycorp.soporte.TipoPromocionEnum;
+import com.mycorp.domain.dto.BeneficiarioPolizas;
+import com.mycorp.domain.dto.DatosAltaAsegurados;
+import com.mycorp.domain.dto.DatosAseguradoInclusion;
+import com.mycorp.domain.dto.PrimasPorProducto;
+import com.mycorp.domain.dto.ProductoPolizas;
+import com.mycorp.domain.dto.PromocionAplicada;
+import com.mycorp.domain.dto.RESTResponse;
+import com.mycorp.domain.dto.TarificacionPoliza;
+import com.mycorp.domain.dto.type.FrecuenciaEnum;
+import com.mycorp.domain.dto.type.TipoPromocionEnum;
+import com.mycorp.exception.ExcepcionContratacion;
+import com.mycorp.service.SimulacionWS;
+import com.mycorp.util.StaticVarsContratacion;
 
 import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosCobertura;
 import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosContratacionPlan;
@@ -68,8 +70,8 @@ import wscontratacion.contratacion.fuentes.parametros.DatosAsegurado;
 import wscontratacion.contratacion.fuentes.parametros.DatosDomicilio;
 import wscontratacion.contratacion.fuentes.parametros.DatosProductoAlta;
 
-
-public class RealizarSimulacion {
+@Component
+public class RealizarSimulacion implements IRealizarSimulacion, InitializingBean{
 
     private static final String LINE_BREAK = "<br/>";
     private static final String DATE_FORMAT = "dd/MM/yyyy";
@@ -118,7 +120,7 @@ public class RealizarSimulacion {
         final Double precioConPromocion[] = { 0.0, 0.0, 0.0, 0.0 };
         final List< List< PrimasPorProducto > > primasDesglosadas = new ArrayList< >();
         final List< List< PromocionAplicada > > promociones = new ArrayList< >();
-        final List< List< com.mycorp.soporte.Recibo > > recibos = new ArrayList< >();
+        final List< List< com.mycorp.domain.dto.Recibo > > recibos = new ArrayList< >();
         final List< String > errores = new ArrayList< >();
 
         Set< FrecuenciaEnum > frecuenciasTarificar = EnumSet.noneOf( FrecuenciaEnum.class );
@@ -845,12 +847,12 @@ public class RealizarSimulacion {
      * @param recibos recibos del primer año de la simulación
      * @return lista de Recibo con la información de los recibos de la simulación.
      */
-    private List< com.mycorp.soporte.Recibo > toReciboList( final ReciboProducto[] recibos ) {
-        final List< com.mycorp.soporte.Recibo > recibosList = new LinkedList< >();
+    private List< com.mycorp.domain.dto.Recibo > toReciboList( final ReciboProducto[] recibos ) {
+        final List< com.mycorp.domain.dto.Recibo > recibosList = new LinkedList< >();
 
         if( recibos != null ) {
             for( final ReciboProducto recibo : recibos ) {
-                final com.mycorp.soporte.Recibo reciboParam = toRecibo( recibo );
+                final com.mycorp.domain.dto.Recibo reciboParam = toRecibo( recibo );
                 if( reciboParam != null ) {
                     recibosList.add( reciboParam );
                 }
@@ -865,10 +867,10 @@ public class RealizarSimulacion {
      * @param recibo datos del recibo
      * @return objeto ReciboProviderOutParam con la simulación de un recibo.
      */
-    private com.mycorp.soporte.Recibo toRecibo( final ReciboProducto recibo ) {
-        com.mycorp.soporte.Recibo reciboParam = null;
+    private com.mycorp.domain.dto.Recibo toRecibo( final ReciboProducto recibo ) {
+        com.mycorp.domain.dto.Recibo reciboParam = null;
         if( recibo != null ) {
-            reciboParam = new com.mycorp.soporte.Recibo();
+            reciboParam = new com.mycorp.domain.dto.Recibo();
             final Calendar fechaEmision = Calendar.getInstance();
             try {
                 fechaEmision.setTime( sdf.parse( "25/12/2016" ) );
@@ -911,5 +913,11 @@ public class RealizarSimulacion {
         }
         return bExcepcion;
     }
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

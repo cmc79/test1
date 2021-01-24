@@ -1,4 +1,4 @@
-package com.mycorp.soporte;
+package com.mycorp.domain.dto;
 
 import java.io.Serializable;
 import java.util.List;

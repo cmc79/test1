@@ -1,4 +1,4 @@
-package com.mycorp.soporte;
+package com.mycorp.domain.dto.type;
 
 /**
  * Tipos de promociones aplicadas en una simulación.
