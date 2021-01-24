@@ -32,8 +32,6 @@ $ java -jar target/test1-1.0-SNAPSHOT.jar.jar
 
 ### Requirements
 
-TODO REVISAR 
-
 The latest version of the archetype has the following requirements:
 - Apache Maven (3.3.9 or newer)
 - Java Development Kit (JDK) –require JDK 11 or above to execute.
