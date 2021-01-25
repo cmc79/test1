@@ -1,2 +1,14 @@
 # Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.mycorp.RealizarSimulacion
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.mycorp.RealizarSimulacion,\
+com.mycorp.service.impl.BeneficiariesServiceImpl, \
+com.mycorp.service.impl.ContractingInformationServiceImpl, \
+com.mycorp.service.impl.CoverageServiceImpl, \
+com.mycorp.service.impl.InsuredProductServiceImpl, \
+com.mycorp.service.impl.PaymentsReceiptsServiceImpl, \
+com.mycorp.service.impl.ProductServiceImpl, \
+com.mycorp.service.impl.PromotionInformationServiceImpl, \
+com.mycorp.service.impl.PromotionsServiceImpl, \
+com.mycorp.service.impl.SimulationsServiceImpl, \
+com.mycorp.service.impl.SolverServiceImpl, \
+com.mycorp.service.impl.TarificationServiceImpl, \
+com.mycorp.service.impl.TierServiceImpl
