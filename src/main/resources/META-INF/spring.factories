@@ -7,8 +7,8 @@ com.mycorp.service.impl.InsuredProductServiceImpl, \
 com.mycorp.service.impl.PaymentsReceiptsServiceImpl, \
 com.mycorp.service.impl.ProductServiceImpl, \
 com.mycorp.service.impl.PromotionInformationServiceImpl, \
-com.mycorp.service.impl.PromotionsServiceImpl, \
-com.mycorp.service.impl.SimulationsServiceImpl, \
+com.mycorp.service.impl.PromotionServiceImpl, \
+com.mycorp.service.impl.SimulationServiceImpl, \
 com.mycorp.service.impl.SolverServiceImpl, \
 com.mycorp.service.impl.TarificationServiceImpl, \
 com.mycorp.service.impl.TierServiceImpl
