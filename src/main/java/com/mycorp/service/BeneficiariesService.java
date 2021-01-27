@@ -1,13 +1,13 @@
 package com.mycorp.service;
 
 
-import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosContratacionPlan;
-import wscontratacion.contratacion.fuentes.parametros.DatosAlta;
-
 import java.util.List;
 
 import com.mycorp.domain.dto.BeneficiarioPolizas;
 import com.mycorp.domain.dto.ProductoPolizas;
+
+import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosContratacionPlan;
+import wscontratacion.contratacion.fuentes.parametros.DatosAlta;
 
 public interface BeneficiariesService {
 

@@ -1,10 +1,10 @@
 package com.mycorp.service;
 
+import java.util.List;
+
 import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosContratacionPlan;
 import wscontratacion.beneficiario.vo.ProductoCobertura;
 import wscontratacion.contratacion.fuentes.parametros.DatosProductoAlta;
-
-import java.util.List;
 
 public interface ProductService {
 

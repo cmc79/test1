@@ -18,7 +18,7 @@ import com.mycorp.domain.dto.PromocionAplicada;
 import com.mycorp.domain.dto.TarificacionPoliza;
 import com.mycorp.domain.dto.type.FrecuenciaEnum;
 import com.mycorp.exception.ExcepcionContratacion;
-import com.mycorp.service.SimulationsService;
+import com.mycorp.service.SimulationService;
 import com.mycorp.service.SolverService;
 import com.mycorp.service.TarificationService;
 import com.mycorp.util.StaticVarsContratacion;
@@ -33,7 +33,7 @@ public class RealizarSimulacion implements IRealizarSimulacion{
 	@Autowired
 	TarificationService tarificationService;
 	@Autowired
-	SimulationsService simulationsService;
+	SimulationService simulationsService;
 	@Autowired
 	SolverService solverService;
 

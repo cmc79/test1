@@ -1,5 +1,6 @@
 package com.mycorp.service.impl;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,7 +27,7 @@ public class TierServiceImpl implements TierService {
 			final DatosAltaAsegurados oDatosAltaAsegurados = (DatosAltaAsegurados) oDatosAlta;
 			final String coeficientesTier = oDatosAltaAsegurados.getCoeficientesTier();
 			if (!StringUtils.isEmpty(coeficientesTier)) {
-				final List<String> productos = Arrays.asList("producto-1", "producto-5", "producto-3");
+				final List<String> productos = Arrays.asList("1", "5", "3");
 				final String[] st = coeficientesTier.split(SEPARADOR_TIER);
 
 				infoTier = new InfoTier();

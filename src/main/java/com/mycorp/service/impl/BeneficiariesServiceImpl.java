@@ -28,7 +28,7 @@ public class BeneficiariesServiceImpl implements BeneficiariesService {
 	@Autowired
 	InsuredProductService productoAsegurado;
 	@Autowired
-	ProductService iProducto;
+	ProductService productService;
 
 	@Override
 	public es.sanitas.seg.simulacionpoliza.services.api.simulacion.vo.Beneficiario[] obtenerBeneficiarios(
@@ -86,7 +86,7 @@ public class BeneficiariesServiceImpl implements BeneficiariesService {
 					.obtenerProductosAsegurado(oDatosAlta.getTitular().getProductosContratados(), oDatosPlan);
 			if (lProductos != null && !lProductos.isEmpty()) {
 				productos = ArrayUtils.addAll(productos,
-						iProducto.obtenerProductos(lProductos.get(0).getProductos(), oDatosPlan));
+						productService.obtenerProductos(lProductos.get(0).getProductos(), oDatosPlan));
 			}
 			beneficiario.setListaProductos(productos);
 
@@ -125,7 +125,7 @@ public class BeneficiariesServiceImpl implements BeneficiariesService {
 					productos = productoAsegurado.obtenerProductosAsegurado(oDatosAsegurado.getProductosContratados(),
 							oDatosPlan);
 					if (lProductos != null && !lProductos.isEmpty()) {
-						productos = ArrayUtils.addAll(productos, iProducto
+						productos = ArrayUtils.addAll(productos, productService
 								.obtenerProductos(lProductos.get(contadorBeneficiario).getProductos(), oDatosPlan));
 					}
 					beneficiario.setListaProductos(productos);

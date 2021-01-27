@@ -16,8 +16,6 @@ import es.sanitas.seg.simulacionpoliza.services.api.simulacion.vo.Cobertura;
 @Component
 public class CoverageServiceImpl implements CoverageService {
 
-    public CoverageServiceImpl() {
-    }
 
     @Override
     public Cobertura[] obtenerCoberturas(final int idProducto, final DatosContratacionPlan oDatosPlan ) {

@@ -20,7 +20,7 @@ import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosContra
 import es.sanitas.bravo.ws.stubs.contratacionws.documentacion.Primas;
 import wscontratacion.contratacion.fuentes.parametros.DatosAlta;
 
-public interface SimulationsService {
+public interface SimulationService {
 
     public List<TarificacionPoliza> getResultadoSimulaciones(
             Collection<Callable<TarificacionPoliza>> solvers)

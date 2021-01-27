@@ -12,7 +12,7 @@ import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosContra
 import es.sanitas.seg.simulacionpoliza.services.api.simulacion.vo.TarifaProducto;
 import wscontratacion.contratacion.fuentes.parametros.DatosAlta;
 
-public interface PromotionsService {
+public interface PromotionService {
 
     public List<PromocionAplicada> recuperarPromocionesAgrupadas(
             final es.sanitas.seg.simulacionpoliza.services.api.simulacion.vo.Promocion[] promociones,

@@ -12,7 +12,7 @@ import com.mycorp.domain.dto.PrimasPorProducto;
 import com.mycorp.domain.dto.PromocionAplicada;
 import com.mycorp.domain.dto.type.FrecuenciaEnum;
 import com.mycorp.domain.dto.type.TipoPromocionEnum;
-import com.mycorp.service.PromotionsService;
+import com.mycorp.service.PromotionService;
 import com.mycorp.util.StaticVarsContratacion;
 
 import es.sanitas.bravo.ws.stubs.contratacionws.consultasoperaciones.DatosContratacionPlan;
@@ -27,7 +27,7 @@ import wscontratacion.contratacion.fuentes.parametros.DatosAsegurado;
 
 @Slf4j
 @Component
-public class PromotionsServiceImpl implements PromotionsService {
+public class PromotionServiceImpl implements PromotionService {
 
 	@Override
 	public List<PromocionAplicada> recuperarPromocionesAgrupadas(final Promocion[] promociones,

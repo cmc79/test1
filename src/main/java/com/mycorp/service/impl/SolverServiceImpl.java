@@ -43,16 +43,15 @@ public class SolverServiceImpl implements SolverService {
     private SimulacionWS servicioSimulacion;
 
     @Autowired
-    PromotionInformationService informacionPromociones;
+    PromotionInformationService promotionInformationService;
     @Autowired
-    TierService tier;
+    TierService tierService;
     @Autowired
-    BeneficiariesService beneficiarios;
+    BeneficiariesService beneficiarioService;
     @Autowired
-    ContractingInformation informacionContratacion;
+    ContractingInformation informacionContratacionService;
 
-    public SolverServiceImpl() {
-    }
+
 
     @Override
     public Callable<TarificacionPoliza> simularPolizaFrecuencia(
@@ -82,12 +81,12 @@ public class SolverServiceImpl implements SolverService {
         } else {
             in.setOperacion( StaticVarsContratacion.ALTA_POLIZA );
         }
-        in.setInfoPromociones( informacionPromociones.obtenerInfoPromociones( oDatosAlta ) );
-        in.setInfoTier( tier.obtenerTier( oDatosAlta ) );
+        in.setInfoPromociones( promotionInformationService.obtenerInfoPromociones( oDatosAlta ) );
+        in.setInfoTier( tierService.obtenerTier( oDatosAlta ) );
         in.setListaBeneficiarios(
-                beneficiarios.obtenerBeneficiarios( oDatosAlta, lProductos, lBeneficiarios, oDatosPlan ) );
+                beneficiarioService.obtenerBeneficiarios( oDatosAlta, lProductos, lBeneficiarios, oDatosPlan ) );
         in.setInfoContratacion(
-                informacionContratacion.obtenerInfoContratacion( oDatosAlta, lBeneficiarios, lProductos, frecuencia,
+                informacionContratacionService.obtenerInfoContratacion( oDatosAlta, lBeneficiarios, lProductos, frecuencia,
                         in.getOperacion()) );
 
         final RESTResponse<Tarificacion, Error > response = servicioSimulacion

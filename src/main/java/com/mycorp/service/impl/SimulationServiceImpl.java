@@ -27,8 +27,8 @@ import com.mycorp.domain.dto.type.FrecuenciaEnum;
 import com.mycorp.domain.dto.type.TipoPromocionEnum;
 import com.mycorp.exception.ExcepcionContratacion;
 import com.mycorp.service.PaymentsReceiptsService;
-import com.mycorp.service.PromotionsService;
-import com.mycorp.service.SimulationsService;
+import com.mycorp.service.PromotionService;
+import com.mycorp.service.SimulationService;
 import com.mycorp.service.TarificationService;
 import com.mycorp.util.StaticVarsContratacion;
 
@@ -40,9 +40,9 @@ import es.sanitas.seg.simulacionpoliza.services.api.simulacion.vo.Tarificacion;
 import wscontratacion.contratacion.fuentes.parametros.DatosAlta;
 
 @Component
-public class SimulationsServiceImpl implements SimulationsService {
+public class SimulationServiceImpl implements SimulationService {
 
-	private static final Logger LOG = LoggerFactory.getLogger(SimulationsServiceImpl.class);
+	private static final Logger LOG = LoggerFactory.getLogger(SimulationServiceImpl.class);
 	private static final int TIMEOUT = 30;
 	private static final int NUMERO_HILOS = 4;
 	private final ExecutorService pool = Executors.newFixedThreadPool(NUMERO_HILOS);
@@ -51,9 +51,9 @@ public class SimulationsServiceImpl implements SimulationsService {
 	@Autowired
 	TarificationService tarificationService;
 	@Autowired
-	SimulationsService simulationsService;
+	SimulationService simulationsService;
 	@Autowired
-	PromotionsService promotionsService;
+	PromotionService promotionsService;
 	@Autowired
 	PaymentsReceiptsService paymentsReceiptsService;
 
